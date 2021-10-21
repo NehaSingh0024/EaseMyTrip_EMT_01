@@ -1,7 +1,9 @@
 package runner;
    
 import java.io.FileInputStream; 
-import java.util.Properties;  
+import java.util.Properties;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -12,7 +14,7 @@ import org.testng.annotations.BeforeMethod;
 public class BaseClass { //This Class is for Opening and Closing of Browser for opening the browser
 	public WebDriver driver; 
 	String browser; 
-	String URL;
+	String URL; 
 	@BeforeMethod	//Using BeforeMethod So that this Run Before each Test 
 	public void beforeMethod() throws Exception //This method is for opening Browser
 	{
@@ -20,7 +22,7 @@ public class BaseClass { //This Class is for Opening and Closing of Browser for 
 		Properties prop = new Properties();
 		prop.load(File); 
 		browser = prop.getProperty("browser"); 
-	    URL = prop.getProperty("URL"); 
+	    URL = prop.getProperty("URL");  
 		File.close(); 
 		switch(browser) {
 		case "Chrome":
@@ -37,6 +39,7 @@ public class BaseClass { //This Class is for Opening and Closing of Browser for 
 			break;	
 		} 
 		driver.manage().window().maximize();  //maximizing the window
+		driver.manage().deleteAllCookies(); 
 		driver.get(URL); //get the URL of EaseMyTrip.com
 	}
 	 
@@ -44,12 +47,12 @@ public class BaseClass { //This Class is for Opening and Closing of Browser for 
 	public void afterMethod() throws InterruptedException { //This method is for Closing the Browser
 //		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //This was not working in EaseMyTrip.com
 		Thread.sleep(4000);//So I used Thread.sleep to pauses the execution and helps us to know what has happened during the pause and the time is given in milliseconds 
-//		driver.quit();
-		
-		if (driver == null) {
-	        return;
-	    }
 		driver.quit();
-		driver = null;
+		
+//		if (driver == null) {
+//	        return;
+//	    }
+//		driver.quit();
+//		driver = null;
 	} 
 }

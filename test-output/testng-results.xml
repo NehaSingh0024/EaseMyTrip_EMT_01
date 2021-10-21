@@ -1,204 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="13" passed="12">
+<testng-results skipped="0" failed="0" ignored="12" total="13" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="391604" started-at="2021-10-21T05:09:44Z" finished-at="2021-10-21T05:16:15Z">
+  <suite name="Default suite" duration-ms="32298" started-at="2021-10-21T13:21:02Z" finished-at="2021-10-21T13:21:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="391604" started-at="2021-10-21T05:09:44Z" finished-at="2021-10-21T05:16:15Z">
+    <test name="Default test" duration-ms="32298" started-at="2021-10-21T13:21:02Z" finished-at="2021-10-21T13:21:34Z">
       <class name="runner.HotelPageRunner">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6782" started-at="2021-10-21T05:09:44Z" finished-at="2021-10-21T05:09:51Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@64cd705f]" name="beforeMethod" is-config="true" duration-ms="8617" started-at="2021-10-21T13:21:02Z" finished-at="2021-10-21T13:21:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="goToLinkTest()[pri:1, instance:runner.HotelPageRunner@67a20f67]" name="goToLinkTest" duration-ms="2630" started-at="2021-10-21T05:09:51Z" finished-at="2021-10-21T05:09:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- goToLinkTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4853" started-at="2021-10-21T05:09:53Z" finished-at="2021-10-21T05:09:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6670" started-at="2021-10-21T05:09:58Z" finished-at="2021-10-21T05:10:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="searchByEmptyCity()[pri:2, instance:runner.HotelPageRunner@67a20f67]" name="searchByEmptyCity" duration-ms="5552" started-at="2021-10-21T05:10:05Z" finished-at="2021-10-21T05:10:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchByEmptyCity -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="5176" started-at="2021-10-21T05:10:10Z" finished-at="2021-10-21T05:10:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6703" started-at="2021-10-21T05:10:15Z" finished-at="2021-10-21T05:10:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="searchWithAllData()[pri:3, instance:runner.HotelPageRunner@67a20f67]" name="searchWithAllData" duration-ms="10532" started-at="2021-10-21T05:10:22Z" finished-at="2021-10-21T05:10:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchWithAllData -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4933" started-at="2021-10-21T05:10:33Z" finished-at="2021-10-21T05:10:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6401" started-at="2021-10-21T05:10:38Z" finished-at="2021-10-21T05:10:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="searchWithAllnchild()[pri:4, instance:runner.HotelPageRunner@67a20f67]" name="searchWithAllnchild" duration-ms="14143" started-at="2021-10-21T05:10:44Z" finished-at="2021-10-21T05:10:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchWithAllnchild -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4922" started-at="2021-10-21T05:10:58Z" finished-at="2021-10-21T05:11:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6955" started-at="2021-10-21T05:11:03Z" finished-at="2021-10-21T05:11:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="searchWithTwoRoom()[pri:5, instance:runner.HotelPageRunner@67a20f67]" name="searchWithTwoRoom" duration-ms="13576" started-at="2021-10-21T05:11:10Z" finished-at="2021-10-21T05:11:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchWithTwoRoom -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4880" started-at="2021-10-21T05:11:24Z" finished-at="2021-10-21T05:11:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6526" started-at="2021-10-21T05:11:28Z" finished-at="2021-10-21T05:11:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="sortByPriceLH()[pri:6, instance:runner.HotelPageRunner@67a20f67]" name="sortByPriceLH" duration-ms="14185" started-at="2021-10-21T05:11:35Z" finished-at="2021-10-21T05:11:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sortByPriceLH -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4970" started-at="2021-10-21T05:11:49Z" finished-at="2021-10-21T05:11:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="7029" started-at="2021-10-21T05:11:54Z" finished-at="2021-10-21T05:12:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="bookRoom()[pri:7, instance:runner.HotelPageRunner@67a20f67]" name="bookRoom" duration-ms="24323" started-at="2021-10-21T05:12:01Z" finished-at="2021-10-21T05:12:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bookRoom -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="5103" started-at="2021-10-21T05:12:26Z" finished-at="2021-10-21T05:12:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6136" started-at="2021-10-21T05:12:31Z" finished-at="2021-10-21T05:12:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="FourStar()[pri:8, instance:runner.HotelPageRunner@67a20f67]" name="FourStar" duration-ms="18649" started-at="2021-10-21T05:12:37Z" finished-at="2021-10-21T05:12:55Z">
+        <test-method status="PASS" signature="FourStar()[pri:8, instance:runner.HotelPageRunner@64cd705f]" name="FourStar" duration-ms="18965" started-at="2021-10-21T13:21:10Z" finished-at="2021-10-21T13:21:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FourStar -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4994" started-at="2021-10-21T05:12:55Z" finished-at="2021-10-21T05:13:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6833" started-at="2021-10-21T05:13:00Z" finished-at="2021-10-21T05:13:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="EnterValidGuestDetailTest()[pri:9, instance:runner.HotelPageRunner@67a20f67]" name="EnterValidGuestDetailTest" duration-ms="28765" started-at="2021-10-21T05:13:07Z" finished-at="2021-10-21T05:13:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EnterValidGuestDetailTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4983" started-at="2021-10-21T05:13:36Z" finished-at="2021-10-21T05:13:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6605" started-at="2021-10-21T05:13:41Z" finished-at="2021-10-21T05:13:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="EnterInvalidEmailTest()[pri:10, instance:runner.HotelPageRunner@67a20f67]" name="EnterInvalidEmailTest" duration-ms="28453" started-at="2021-10-21T05:13:48Z" finished-at="2021-10-21T05:14:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EnterInvalidEmailTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4976" started-at="2021-10-21T05:14:16Z" finished-at="2021-10-21T05:14:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6286" started-at="2021-10-21T05:14:21Z" finished-at="2021-10-21T05:14:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="EnterInvalidMobNoTest()[pri:11, instance:runner.HotelPageRunner@67a20f67]" name="EnterInvalidMobNoTest" duration-ms="29367" started-at="2021-10-21T05:14:27Z" finished-at="2021-10-21T05:14:57Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertTrue(Assert.java:44)
-at org.testng.Assert.assertTrue(Assert.java:54)
-at runner.HotelPageRunner.EnterInvalidMobNoTest(HotelPageRunner.java:167)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EnterInvalidMobNoTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4964" started-at="2021-10-21T05:14:57Z" finished-at="2021-10-21T05:15:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6532" started-at="2021-10-21T05:15:02Z" finished-at="2021-10-21T05:15:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="NoGuestDetailsTest()[pri:12, instance:runner.HotelPageRunner@67a20f67]" name="NoGuestDetailsTest" duration-ms="25778" started-at="2021-10-21T05:15:08Z" finished-at="2021-10-21T05:15:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NoGuestDetailsTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4993" started-at="2021-10-21T05:15:34Z" finished-at="2021-10-21T05:15:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="beforeMethod" is-config="true" duration-ms="6470" started-at="2021-10-21T05:15:39Z" finished-at="2021-10-21T05:15:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="uncheckTnCTest()[pri:13, instance:runner.HotelPageRunner@67a20f67]" name="uncheckTnCTest" duration-ms="24975" started-at="2021-10-21T05:15:45Z" finished-at="2021-10-21T05:16:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- uncheckTnCTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@67a20f67]" name="afterMethod" is-config="true" duration-ms="4913" started-at="2021-10-21T05:16:10Z" finished-at="2021-10-21T05:16:15Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:runner.HotelPageRunner@64cd705f]" name="afterMethod" is-config="true" duration-ms="4685" started-at="2021-10-21T13:21:29Z" finished-at="2021-10-21T13:21:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

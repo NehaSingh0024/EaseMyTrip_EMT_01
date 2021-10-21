@@ -6,8 +6,11 @@
       <class name="runner.HotelPageRunner">
         <methods>
           <include name="EnterInvalidMobNoTest"/>
-          <include name="searchByEmptyCity"/>
+          <include name="searchWithTwoRoom"/>
+          <include name="sortByPriceLH"/>
+          <include name="FourStar"/>
           <include name="afterMethod"/>
+          <include name="searchWithAllnchild"/>
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- runner.HotelPageRunner -->

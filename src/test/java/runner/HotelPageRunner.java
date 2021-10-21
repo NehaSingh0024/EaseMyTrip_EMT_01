@@ -1,11 +1,14 @@
 package runner;
  
 import java.io.FileInputStream;
-import java.io.IOException;  
+import java.io.IOException;
+import java.util.Properties;
+
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -15,17 +18,23 @@ import pages.HotelPage;
 
 public class HotelPageRunner extends BaseClass{
 	 
-	HotelPage hp;                               //declaring hp globally so that it can be accessed in every test
+	HotelPage hp;  
+	Properties prop;
+	public HotelPageRunner() throws Exception { 
+		FileInputStream File = new FileInputStream("src\\test\\resources\\reads\\setup.properties");
+		prop = new Properties();
+		prop.load(File);  
+	}//declaring hp globally so that it can be accessed in every test
 	
-	@Test(enabled = true, priority = 1)         //enabled to true so that this test will run and giving it priority 1 to run this test First
-	public void goToLinkTest() throws InterruptedException, IOException { //Testing if it is going on the Hotels from the NavBar on Home Screen
+	@Test(enabled = false, priority = 1)         //enabled to true so that this test will run and giving it priority 1 to run this test First
+	public void goToLinkTest() throws Exception { //Testing if it is going on the Hotels from the NavBar on Home Screen
 		hp = new HotelPage(driver);             //creating an object of HotelPage
 		hp.goToHotels();                        //calling goToHotels from HotelPage
 		Assert.assertTrue(driver.getCurrentUrl().contains("hotels"));//Using assrtTrue (returns true if condition is true) to check if the it is navigated to the correct URL after clicking 
 		hp.screenshot("NavToHotel");            //Calling screenshot method from hp this Takes ScreenShot at of the end page after Test and the png file name as mentioned in the parameter here
 	} 
 	
-	@Test(enabled = true, priority = 2)
+	@Test(enabled = false, priority = 2)
 	public void searchByEmptyCity() throws Exception {//This test is to search for Hotels By Keeping the City field Empty so that it gives error alert
 		goToLinkTest();           
 		hp.emptyCity();           
@@ -37,7 +46,7 @@ public class HotelPageRunner extends BaseClass{
 	 	hp.screenshot("EmptyCity");
 	}
 	
-	@Test(enabled = true, priority = 3)
+	@Test(enabled = false, priority = 3)
 	public void searchWithAllData() throws Exception { //This test is by giving all correct data and searching and seeing if the search is valid
 		goToLinkTest();   
 		hp.emptyCity();
@@ -48,7 +57,7 @@ public class HotelPageRunner extends BaseClass{
 		hp.screenshot("AllDataSearch");
 	}
 	
-	@Test(enabled = true, priority = 4) 
+	@Test(enabled = false, priority = 4) 
 	public void searchWithAllnchild() throws Exception { //This test is to search by giving all valid data plus adding a child and its age in room for checking additional functionality
 		goToLinkTest(); 
 		hp.emptyCity();
@@ -61,29 +70,28 @@ public class HotelPageRunner extends BaseClass{
 	}
 	
 	
-	@Test(enabled = true, priority = 5)
+	@Test(enabled = false, priority = 5)
 	public void searchWithTwoRoom() throws Exception {  //This test is to search by giving all valid data plus adding a room to make it 2 rooms for checking additional functionality
 		goToLinkTest(); 
 		hp.emptyCity();
 		hp.enterCityCidCod(); 
 		hp.AddAdult(); 
-		hp.removeAdult2();
-		hp.AddRoom();
+		hp.AddRoom(); 
 		hp.screenshot("TwoRoomSearch");                 //Taking screenshot where room is getting added 
 		hp.clickSearch();
 		Assert.assertTrue(driver.getCurrentUrl().contains("Mumbai")); 
 	}
 	
-	@Test(enabled = true, priority = 6)
+	@Test(enabled = false, priority = 6)
 	public void sortByPriceLH() throws Exception {     //This test is to check if searched result is getting sorted by price high to low
 		searchWithTwoRoom();
 		hp.sortByPriceHL(); 
-		String LtoH = driver.findElement(By.xpath("//select[@id='drpHighList']/option[2]")).getText();//Getting the text of sorted drop down
+		String LtoH = driver.findElement(By.xpath(prop.getProperty("PriceLtoH"))).getText();//Getting the text of sorted drop down
 		Assert.assertEquals("Price - Low to High", LtoH); //Checking if the result is sorted
 		hp.screenshot("PriceLowToHigh");               
 		
 	}
-	@Test(enabled = true, priority = 7)
+	@Test(enabled = false, priority = 7)
 	public void bookRoom() throws Exception {     // This test is to check the book now button functionality and it is taking us to a new tab of guest entering details
 		searchWithAllData();
 		Thread.sleep(2000);
@@ -93,17 +101,17 @@ public class HotelPageRunner extends BaseClass{
 	}
 	
 	  
-	@Test(enabled = true, priority = 8)
+	@Test(enabled = false, priority = 8)
 	public void FourStar() throws Exception {        //This test is to check if available filter of 4 star hotel is getting applied or not
 		searchWithAllnchild();
-		driver.findElement(By.xpath("//div[@class='sidebar__inner']/div[6]/label[2]/span[text()='4']")).click(); 
+		driver.findElement(By.xpath(prop.getProperty("fourStar"))).click();  //clicking 4 star
 		Thread.sleep(3000);
 		boolean star = driver.findElement(By.xpath("//*[@id=\"hotelListDiv\"]/div[1]/div[2]/div/a/div/h3/span[2]/span/i")).isDisplayed();
 		Assert.assertTrue(star);
 		hp.screenshot("FourStarHotels");
 	}
 	
-	@Test(enabled = true, priority = 9)
+	@Test(enabled = false, priority = 9)
 	public void EnterValidGuestDetailTest() throws Exception { //This Test will Check if all valid details of Guest is getting accepted or not
 		bookRoom(); 
 		//Using Data Driven Framework 
@@ -117,14 +125,14 @@ public class HotelPageRunner extends BaseClass{
 		String mob = st.getRow(1).getCell(4).toString();
 		wb.close();                                            //Closing the Excel Workbook
 		hp.enterGuestDetails(title, fname, lname, email, mob); //Passing the data of excel to enterGuestDetails method
-		driver.findElement(By.id("btnTravellerContinue")).click();//clicking continue to pay button
+		driver.findElement(By.id(prop.getProperty("btnContinue"))).click();//clicking continue to pay button
 		Thread.sleep(1000);
-		String payFinal = driver.findElement(By.xpath("//*[@id=\"card\"]/div[9]/div[2]")).getText();
+		String payFinal = driver.findElement(By.xpath(prop.getProperty("makePayTxt"))).getText();  //storing Make Payment
 		Assert.assertEquals("Make Payment", payFinal);         //asserting if its taking us to the next page of making payment in new tab 
 		hp.screenshot("PayPageAfterGuestDetails");
 	}
 	
-	@Test(enabled = true, priority = 10)
+	@Test(enabled = false, priority = 10)
 	public void EnterInvalidEmailTest() throws Exception {    //This Test will Check if InValid Email in details of Guest is getting accepted or not
 		bookRoom(); 
 		XSSFWorkbook wb =  new XSSFWorkbook(new FileInputStream("src\\test\\resources\\reads\\data.xlsx"));
@@ -138,7 +146,7 @@ public class HotelPageRunner extends BaseClass{
 		wb.close();
 		hp.enterGuestDetails(title, fname, lname, email, mob);  
 		Thread.sleep(2000);
-		driver.findElement(By.id("btnTravellerContinue")).click();  
+		driver.findElement(By.id(prop.getProperty("btnContinue"))).click();  
 //	 	hp.screenshot("InvalidEmailAlert");      //Taking ss where it gives a alert msg of invalid email  
 		Alert alert = driver.switchTo().alert();  
 	 	String al = alert.getText();
@@ -147,7 +155,7 @@ public class HotelPageRunner extends BaseClass{
 	 	hp.screenshot("InvalidEmailNotAccepted");
 	}
 	
-	@Test(enabled = true, priority = 11)
+	@Test(enabled = false, priority = 11)
 	public void EnterInvalidMobNoTest() throws Exception { //This Test Checks if it Takes Invalid Mobile is accepted or not
 		bookRoom(); 
 		XSSFWorkbook wb =  new XSSFWorkbook(new FileInputStream("src\\test\\resources\\reads\\data.xlsx"));
@@ -161,17 +169,17 @@ public class HotelPageRunner extends BaseClass{
 		wb.close();
 		hp.enterGuestDetails(title, fname, lname, email, mob); 
 		hp.screenshot("GivenInValidMob");
-		driver.findElement(By.id("btnTravellerContinue")).click();
+		driver.findElement(By.id(prop.getProperty("btnContinue"))).click();
 		Thread.sleep(1000); 
 		boolean ap = hp.isAlertPresent(); //Here in the boolean variable we store result of the method isAlertPresent
 	 	Assert.assertTrue(ap);            //returns True if Alert is Present -- But this Gives False as alert is Not seen Even after giving Wrong Mobile No
 	 	hp.screenshot("InValidMobAccepted");
 	}
 	
-	@Test(enabled = true, priority = 12)
+	@Test(enabled = false, priority = 12)
 	public void NoGuestDetailsTest() throws Exception { //This Test Will check to proceed for payment By giving No details of the Guest. This should give Alert msg
 		bookRoom();
-		driver.findElement(By.id("btnTravellerContinue")).click(); 
+		driver.findElement(By.id(prop.getProperty("btnContinue"))).click(); 
 		Thread.sleep(1000);
 		Alert alert = driver.switchTo().alert();  
 	 	String al = alert.getText();
@@ -180,11 +188,11 @@ public class HotelPageRunner extends BaseClass{
 	 	hp.screenshot("EmptyGuest");
 	}
 	
-	@Test(enabled = true, priority = 13)
+	@Test(enabled = false, priority = 13)
 	public void uncheckTnCTest() throws Exception { //This Test is to Uncheck  the Terms & condition CheckBox and Proceed to payment
 		bookRoom();
-		driver.findElement(By.xpath("//label[@class='ctr_cbox lh18']/span[2]")).click(); //Clicks On checkbox to uncheck 
-		driver.findElement(By.id("btnTravellerContinue")).click(); 
+		driver.findElement(By.xpath(prop.getProperty("TnCBox"))).click(); //Clicks On checkbox to uncheck 
+		driver.findElement(By.id(prop.getProperty("btnContinue"))).click(); 
 		Thread.sleep(1000);
 		Alert alert = driver.switchTo().alert();  
 	 	String al = alert.getText();

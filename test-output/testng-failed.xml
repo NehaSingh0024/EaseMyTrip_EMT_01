@@ -5,7 +5,7 @@
     <classes>
       <class name="runner.HotelPageRunner">
         <methods>
-          <include name="EnterInvalidMobNoTest"/>
+          <include name="searchWithTwoRoom"/>
           <include name="afterMethod"/>
           <include name="beforeMethod"/>
         </methods>
